@@ -1,0 +1,27 @@
+<div class="usersprofile">
+  <h2><strong>User info</strong></h2>
+   <%= render 'users/profile' %>
+</div>
+
+<div class="booksform">
+  <h2><strong>New book</strong></h2>
+  <%= render 'books/form' %>
+</div
+
+<div class="booklist">
+ <h2><strong>Books</strong></h2>
+  <table>
+   <thead>
+     <tr>
+         <th>Title</th>
+         <th>Opinion</th>
+     </tr>
+     <% @books.each do |book| %>
+     <tr>
+       <td><%= book.title %></td>
+       <td><%= book.opinion %></td>
+     </tr>
+     <% end %>
+   </thead>
+  </table>
+ </div>
