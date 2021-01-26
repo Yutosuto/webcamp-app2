@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+<% if user.errors.any? %>
+ "error"
+<P><%= flash.now[:alert] %></P>
+<% end %>
+<%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+<h1>User info</h1>
+<h4>Name</h4>
+validates :user.name, length: { in: 2..20 }
+ <%= user.name %>
+
+<label for="inputImage">Image</label>
+  <%= f.attachment_field :profile_image %>
+
+<h4>Introduction</h4>
+<%= user.intoroduction %>
+
+<%= link_to "Update User", edit_user_path(current_user., class:"text-white" %></P></button>
