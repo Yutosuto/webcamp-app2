@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email])
+      # flash[:singup] = "Welcome! You have signed up successfully."
     devise_parameter_sanitizer.permit(:sign_in, keys: [:name,:email])
+    # flash[:singin] = "Signed in successfully."
   end
 
  def after_sign_in_path_for(resource)

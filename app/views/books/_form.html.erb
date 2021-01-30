@@ -1,7 +1,7 @@
-<%= form_with model:@book, local: true do |f| %>
+<%= form_with model:book, local: true do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
   <h4>Opinion</h4>
   <%= f.text_area :body %>
-  <%= f.submit 'Create Booke' %>
+  <%= f.submit 'Create Booke', class: "btn btn-success" %>
 <% end %>

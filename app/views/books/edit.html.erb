@@ -1,18 +1,34 @@
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
-<% if @book.errors.any? %>
- "error"
-<P><%= flash.now[:alert] %></P>
-<% end %>
-<h1>Editing Book</h1>I
+    <p id="notice"></p>
+   <div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <h1>Editing Book</h1>
  <%= form_with model: @user, local:true do |f| %>
+ <% if @user.errors.any? %>
+      <%= @user.errors.count %>件のエラーが発生しました
+      <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+      <% end %>
+      <% end %>
  <h4>Title</h4>
  <%= f.text_field :title %>
  <h4>Opinion</h4>
  <%= f.text_area :body %>
+ <div class="form-group">
  <%= f.submit 'Update Book' %>
 <% end %>
 
-<%= link_to "Show", book_path(@book.id) %>
-<%= link_to "Back", books_path %>
+<div class="form-group">
+ <%= link_to "Show", book_path %>|
+ <%= link_to "Back", books_path %>
+</div>
+
+<footer>
+  <div class='container mt-5'>
+  	<div class='row'>
+    	<div class='mx-auto'>
+    		<p>CopyRight Infratop.inc</p>
+    	</div>
+    </div>
+  </div>
+</footer>

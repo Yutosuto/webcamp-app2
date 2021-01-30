@@ -1,16 +1,16 @@
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
-<% if user.errors.any? %>
- "error"
-<P><%= flash.now[:alert] %></P>
-<% end %>
-<%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-<h4>Name</h4>
- <%= user.name %>
 
-<h4>Introduction</h4>
-<%= user.introduction %>
-
-
-
+ <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+ <table class="table table-striped">
+   <tr><img class="attachment user profile_image fallback"/></tr>
+   <tr>
+    <th>Name</th>
+    <th><%= user.name %></th>
+  </tr>
+  <tr>
+    <th>introduction</th>
+    <th><%= user.introduction %></th>
+  </tr>
+</table>
+  <div class='row'>
+    <%= link_to "", edit_user_path(current_user), class:"btn btn-outline-secondary btn-block fas fa-user-cog" %>
+  </div>
